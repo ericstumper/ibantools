@@ -62,7 +62,7 @@
 
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>1.1.0</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>1.2.0</li></ul></dd>
     
 
     
@@ -454,7 +454,166 @@ ibantools.electronicFormatIBAN('NL91 ABNA 0417 1643 00');</code></pre>
 
     
 
-    <h4 class="name" id=".extractIBAN"><span class="type-signature">(static) </span>extractIBAN<span class="signature">(IBAN)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".extractBIC"><span class="type-signature">(static) </span>extractBIC<span class="signature">(BIC)</span><span class="type-signature"> &rarr; {ExtractBICResult}</span></h4>
+
+    
+
+
+
+<div class="description">
+    extractBIC
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>BIC</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">BIC</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ibantools.js.html">ibantools.js</a>, <a href="ibantools.js.html#line251">line 251</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Object {bancCode: string, countryCode: string, locationCode: string, branchCode: string, testBIC: boolean, valid: boolean}
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ExtractBICResult</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// returns {bankCode: 'ABNA', countryCode: 'NL', locationCode: '2A', branchCode: null, testBIC: flase, valid: true}
+ibantools.extractBIC('ABNANL2A');</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".extractIBAN"><span class="type-signature">(static) </span>extractIBAN<span class="signature">(IBAN)</span><span class="type-signature"> &rarr; {ExtractIBANResult}</span></h4>
 
     
 
@@ -577,6 +736,28 @@ ibantools.electronicFormatIBAN('NL91 ABNA 0417 1643 00');</code></pre>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Object {bban: string, countryCode: string, countryName: string, valid: boolean}
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ExtractIBANResult</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
     <h5>Example</h5>
@@ -1087,6 +1268,174 @@ ibantools.isValidBBAN('A7NA 0517 1643 00', 'NL');</code></pre>
 
     
 
+    <h4 class="name" id=".isValidBIC"><span class="type-signature">(static) </span>isValidBIC<span class="signature">(BIC)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Validate BIC/SWIFT
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>BIC</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">BIC</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ibantools.js.html">ibantools.js</a>, <a href="ibantools.js.html#line237">line 237</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    valid
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>// returns true
+ibantools.isValidBIC('ABNANL2A');</code></pre>
+
+    <pre class="prettyprint"><code>// returns true
+ibantools.isValidBIC('NEDSZAJJXXX');</code></pre>
+
+    <pre class="prettyprint"><code>// returns false
+ibantools.isValidBIC('ABN4NL2A');</code></pre>
+
+    <pre class="prettyprint"><code>// returns false
+ibantools.isValidBIC('ABNA NL 2A');</code></pre>
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id=".isValidIBAN"><span class="type-signature">(static) </span>isValidIBAN<span class="signature">(IBAN)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
@@ -1269,7 +1618,7 @@ ibantools.isValidIBAN('NL92 ABNA 0517 1643 00');</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Aug 27 2016 20:05:10 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Feb 04 2017 13:08:31 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>
