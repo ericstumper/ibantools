@@ -11,7 +11,6 @@
   "homepage": "https://github.com/Simplify/ibantools",
   "bugs": "https://github.com/Simplify/ibantools/issues",
   "main": "build/ibantools.js",
-  "jsnext:main": "es6/ibantools.js",
   "jspm": {
     "main": "es6/ibantools.js",
     "format": "esm"
